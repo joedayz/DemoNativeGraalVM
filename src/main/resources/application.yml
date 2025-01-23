@@ -8,9 +8,20 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.SQLServer2012Dialect
+        dialect: org.hibernate.dialect.SQLServerDialect
   sql:
     init:
       mode: always
 server:
   port: 8080
+
+
+
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} [%thread] - %msg%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
+  level:
+    org.springframework.web: ERROR
+    com.pacifico.demopacificogradle: ERROR
+    org.hibernate: ERROR
