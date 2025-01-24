@@ -31,7 +31,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation 'com.azure.spring:spring-cloud-azure-starter-servicebus'
+	implementation 'com.azure:azure-messaging-servicebus:7.0.0'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -40,11 +40,6 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-dependencyManagement {
-	imports {
-		mavenBom 'com.azure.spring:spring-cloud-azure-dependencies:5.9.1'
-	}
-}
 
 bootBuildImage {
 	builder = 'paketobuildpacks/builder:tiny'
