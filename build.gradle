@@ -27,11 +27,13 @@ repositories {
 
 
 dependencies {
+	// Importar las dependencias de Spring Cloud Azure
+	implementation platform("com.azure.spring:spring-cloud-azure-dependencies:5.19.0")
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation 'com.azure:azure-messaging-servicebus:7.0.0'
+	implementation "com.azure.spring:spring-cloud-azure-starter-servicebus"
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -44,7 +46,7 @@ dependencies {
 bootBuildImage {
 	builder = 'paketobuildpacks/builder:tiny'
 	environment = [
-			'BP_NATIVE_IMAGE_BUILD_ARGUMENTS': '-H:+AddAllCharsets'
+			'BP_NATIVE_IMAGE_BUILD_ARGUMENTS': '-H:+AddAllCharsets -Djava.security.properties=/workspace/BOOT-INF/classes/custom.security --initialize-at-build-time=org.slf4j.helpers.Reporter'
 	]
 }
 
