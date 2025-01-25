@@ -36,4 +36,5 @@ public class AzureServiceBusConfig {
         .queueName(queueName)
         .buildAsyncClient();
   }
+
 }

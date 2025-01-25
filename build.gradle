@@ -43,12 +43,15 @@ dependencies {
 }
 
 
+
 bootBuildImage {
 	builder = 'paketobuildpacks/builder:tiny'
 	environment = [
 			'BP_NATIVE_IMAGE_BUILD_ARGUMENTS': '-H:+AddAllCharsets -Djava.security.properties=/workspace/BOOT-INF/classes/custom.security --initialize-at-build-time=org.slf4j.helpers.Reporter'
 	]
 }
+
+
 
 tasks.named('test') {
 	useJUnitPlatform()
