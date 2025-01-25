@@ -2,7 +2,7 @@ server:
   port: 8080
 
 spring:
-  datasource:
+  r2dbc:
     url: jdbc:sqlserver://sqlserver:1433;databaseName=football;encrypt=true;trustServerCertificate=true;
     username: sa
     password: Perusalen123$
