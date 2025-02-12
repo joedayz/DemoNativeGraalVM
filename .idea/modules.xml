@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.pacifico.demopacificogradle.aot.iml" filepath="$PROJECT_DIR$/.idea/modules/com.pacifico.demopacificogradle.aot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.pacifico.demopacificogradle.aotTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.pacifico.demopacificogradle.aotTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.pacifico.demopacificogradle.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.pacifico.demopacificogradle.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demopacificogradle.aot.iml" filepath="$PROJECT_DIR$/.idea/modules/demopacificogradle.aot.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demopacificogradle.aotTest.iml" filepath="$PROJECT_DIR$/.idea/modules/demopacificogradle.aotTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demopacificogradle.main.iml" filepath="$PROJECT_DIR$/.idea/modules/demopacificogradle.main.iml" />
