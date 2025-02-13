@@ -1,0 +1,23 @@
+FROM container-registry.oracle.com/java/openjdk:17-oraclelinux8 as BUILDER
+
+# Build a minimal JRE that will run our app
+
+RUN jlink --add-modules java.base,java.logging,java.desktop,jdk.httpserver,java.management,java.naming,java.security.jgss,java.instrument,java.sql,java.xml,java.transaction.xa,java.rmi,java.compiler,java.net.http,java.management.rmi \
+        --output /min-jre
+
+
+FROM container-registry.oracle.com/os/oraclelinux:8-slim
+
+# Now package out app with the minimal runtime
+
+ARG JAR_FILE
+
+EXPOSE 8080
+
+COPY --from=BUILDER /min-jre/ /jre/
+COPY build/libs/${JAR_FILE} app.jar
+
+ENV PATH=/jre/bin:$PATH
+
+ENTRYPOINT ["java"]
+CMD ["-jar","app.jar"]
